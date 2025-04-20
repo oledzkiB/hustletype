@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> HustleTypes - Analityka Sportowa i Typy Bukmacherskie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
+  <style>
+    @keyframes fade-in-up {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+      animation: fade-in-up 0.8s ease-out both;
+    }
+    .pulse-animation {
+      animation: pulse 1.5s infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+  <header class="bg-gray-800 shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold text-green-500">HustleTypes</h1>
+      <nav class="space-x-6 flex items-center">
+        <a href="#about" class="hover:text-green-400">O nas</a>
+        <a href="#wins" class="hover:text-green-400">Wygrane</a>
+        <a href="#pricing" class="hover:text-green-400">Cennik</a>
+        <a href="#reviews" class="hover:text-green-400">Opinie</a>
+        <a href="#contact" class="hover:text-green-400">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="bg-gray-950 py-20 text-center animate-fade-in-up">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-extrabold text-green-400 mb-4">Zacznij wygrywać!</h2>
+      <p class="text-lg text-gray-300 mb-6">Ekspercka analiza. Sprawdzone typy. Skuteczność, która robi różnicę.</p>
+      <a href="#pricing" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full transition pulse-animation">Dołącz teraz</a>
+    </div>
+  </section>
+
+<section id="about" class="py-16 bg-gray-900 animate-fade-in-up">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h3 class="text-4xl font-bold text-green-400 mb-6">Kim jesteśmy</h3>
+    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+      Jesteśmy grupą doświadczonych analityków sportowych specjalizujących się w modelach i strategiach obstawiania. Nasze podejście łączy dane, statystyki, zaawansowane algorytmy oraz doświadczenie z prawdziwego rynku bukmacherskiego.
+    </p>
+    <h4 class="text-3xl font-bold text-green-400 mb-6">Obstawianie z nami to nie hazard — to inwestycja.</h4>
+    <div class="text-left max-w-3xl mx-auto text-gray-300 space-y-6 text-lg leading-relaxed">
+      <p class="text-xl">Każdy typ przechodzi przez wieloetapową selekcję:</p>
+      <ul class="space-y-4">
+        <li>📊 <span class="text-green-400 font-semibold">Zaawansowana analiza danych</span> — uwzględniamy statystyki, formę drużyn, sytuację kadrową i wiele innych czynników.</li>
+        <li>🤖 <span class="text-green-400 font-semibold">Modele AI i machine learning</span> — przewidujemy wyniki na podstawie tysięcy rozegranych spotkań i dynamicznych symulacji.</li>
+        <li>👥 <span class="text-green-400 font-semibold">Ekspercka weryfikacja</span> — każda propozycja jest konsultowana w zespole i dopiero wtedy trafia do naszych klientów.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="wins" class="py-20 bg-gray-950 animate-fade-in-up">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h3 class="text-4xl font-bold text-green-400 mb-4">Nasze sukcesy</h3>
+    <p class="text-lg text-gray-300 mb-10">Zobacz, jak nasze kupony pomogły naszym klientom osiągnąć spektakularne wyniki.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+      <div>
+        <div class="text-5xl font-bold text-green-500 counter" data-target="92">0</div>
+        <p class="text-gray-300 mt-2">%</p>
+        <p class="text-gray-400">Skuteczność typów</p>
+      </div>
+      <div>
+        <div class="text-5xl font-bold text-green-500 counter" data-target="3500">0</div>
+        <p class="text-gray-300 mt-2">+</p>
+        <p class="text-gray-400">Zadowolonych graczy</p>
+      </div>
+      <div>
+        <div class="text-5xl font-bold text-green-500 counter" data-target="5">0</div>
+        <p class="text-gray-300 mt-2">lat</p>
+        <p class="text-gray-400">Doświadczenia</p>
+      </div>
+    </div>
+
+    <div class="swiper wins-swiper mt-10">
+      <div class="swiper-wrapper">
+        <!-- Kupon 1 -->
+        <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
+          <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
+            <img src="kupon.jpg" alt="Kupon 1" class="object-contain h-full w-auto">
+          </div>
+        </div>
+        <!-- Kupon 2 -->
+        <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
+          <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
+            <img src="kupon1.jpg" alt="Kupon 2" class="object-contain h-full w-auto">
+          </div>
+        </div>
+        <!-- Kupon 3 -->
+        <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
+          <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
+            <img src="kupon2.jpg" alt="Kupon 3" class="object-contain h-full w-auto">
+          </div>
+        </div>
+        <!-- Kupon 4 -->
+        <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
+          <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
+            <img src="kupon3.jpg" alt="Kupon 4" class="object-contain h-full w-auto">
+          </div>
+        </div>
+        <!-- Kupon 5 -->
+        <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
+          <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
+            <img src="kupon7.jpg" alt="Kupon 5" class="object-contain h-full w-auto">
+          </div>
+        </div>
+        <!-- Kupon 6 -->
+        <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
+          <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
+            <img src="kupon8.jpg" alt="Kupon 6" class="object-contain h-full w-auto">
+          </div>
+        </div>
+        <!-- Kupon 7 -->
+        <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
+          <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
+            <img src="kupon9.jpg" alt="Kupon 7" class="object-contain h-full w-auto">
+          </div>
+        </div>
+      </div>
+
+      <!-- Nawigacja -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <a href="#pricing" class="inline-block mt-12 bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-full transition pulse-animation text-lg">Dołącz do naszej grupy</a>
+  </div>
+</section>
+
+<script>
+  const swiper = new Swiper(".wins-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2
+      },
+      1024: {
+        slidesPerView: 3
+      }
+    }
+  });
+
+  // Animacja liczb
+  window.addEventListener('load', function () {
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      let count = 0;
+      const increment = target / 200;
+
+      function animateCounter() {
+        if (count < target) {
+          count += increment;
+          counter.textContent = Math.floor(count);
+          requestAnimationFrame(animateCounter);
+        } else {
+          counter.textContent = target;
+        }
+      }
+      
+      animateCounter();
+    });
+  });
+</script>
+
+
+<section id="pricing" class="py-20 bg-gray-900 animate-fade-in-up">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h3 class="text-4xl font-bold text-green-400 mb-6">Cennik Promocyjny!</h3>
+    <p class="text-gray-300 mb-10">Skorzystaj z aktualnych rabatów i zacznij grać z zyskiem.</p>
+    <div id="plans" class="grid md:grid-cols-3 gap-8 text-gray-100">
+
+      <div onclick="selectPlan('Basic')" id="Basic" class="plan relative bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col items-center cursor-pointer transition border-2 border-transparent hover:border-green-500">
+  <!-- Etykieta -->
+  <div class="absolute top-0 left-0 bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-br-xl">-15%</div>
+
+  <h4 class="text-2xl font-semibold mb-4 text-green-400">Basic</h4>
+  <div class="mb-4">
+    <span class="text-xl text-gray-400 line-through mr-2">70 PLN</span>
+    <span class="text-3xl font-bold text-green-400">59 PLN</span>
+  </div>
+  <ul class="mb-6 space-y-2 text-gray-300">
+    <li>✔️ Dostęp do grupy</li>
+    <li>✔️ Typy ekspertów</li>
+  </ul>
+  <button class="buy-btn bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full text-white font-semibold transition">Kup teraz</button>
+</div>
+
+<!-- Pakiet Premium -->
+<div onclick="selectPlan('Premium')" id="Premium" class="plan relative bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col items-center cursor-pointer transition border-2 border-transparent hover:border-green-500">
+  <!-- Etykieta -->
+  <div class="absolute top-0 left-0 bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-br-xl">-25%</div>
+
+  <h4 class="text-2xl font-semibold mb-4 text-green-400">Premium</h4>
+  <div class="mb-4">
+    <span class="text-xl text-gray-400 line-through mr-2">130 PLN</span>
+    <span class="text-3xl font-bold text-green-400">99 PLN</span>
+  </div>
+  <ul class="mb-6 space-y-2 text-gray-300">
+    <li>✔️ Wyższe kursy</li>
+    <li>✔️ Dostęp VIP</li>
+    <li>✔️ Analizy premium</li>
+  </ul>
+  <button class="buy-btn bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full text-white font-semibold transition">Kup teraz</button>
+</div>
+
+<!-- Pakiet Pro -->
+<div onclick="selectPlan('Pro')" id="Pro" class="plan relative bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col items-center cursor-pointer transition border-2 border-transparent hover:border-green-500">
+  <!-- Etykieta -->
+  <div class="absolute top-0 left-0 bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-br-xl">-40%</div>
+
+  <h4 class="text-2xl font-semibold mb-4 text-green-400">Pro</h4>
+  <div class="mb-4">
+    <span class="text-xl text-gray-400 line-through mr-2">249 PLN</span>
+    <span class="text-3xl font-bold text-green-400">149 PLN</span>
+  </div>
+  <ul class="mb-6 space-y-2 text-gray-300">
+    <li>✔️ Analizy najbardziej zaawansowanymi metodami</li>
+    <li>✔️ Full VIP & support 24/7</li>
+    <li>✔️ Typy live</li>
+    <li>✔️ Dostęp VIP</li>
+  </ul>
+  <button class="buy-btn bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full text-white font-semibold transition">Kup teraz</button>
+</div>
+
+    </div>
+	<p class="text-gray-300 mb-10">*cena dotyczy miesięcznego dostępu</p>
+  </div>
+</section>
+
+
+<script>
+  function selectPlan(planId) {
+    const plans = document.querySelectorAll('.plan');
+    plans.forEach(plan => {
+      plan.classList.remove('border-green-500', 'scale-105', 'shadow-green-500/30');
+      plan.querySelector('.buy-btn').classList.remove('bg-green-600');
+      plan.querySelector('.buy-btn').classList.add('bg-green-500');
+    });
+
+    const selected = document.getElementById(planId);
+    selected.classList.add('border-green-500', 'scale-105', 'shadow-green-500/30');
+    selected.querySelector('.buy-btn').classList.remove('bg-green-500');
+    selected.querySelector('.buy-btn').classList.add('bg-green-600');
+
+    console.log("Wybrano plan:", planId);
+  }
+</script>
+
+  <section id="reviews" class="py-16 bg-gray-950 text-center animate-fade-in-up">
+    <h3 class="text-3xl font-semibold text-green-400 mb-10">Co mówią nasi klienci</h3>
+    <div class="max-w-6xl mx-auto grid gap-6 md:grid-cols-3 px-6">
+      <div class="bg-gray-800 p-6 rounded-xl border border-green-600 shadow-md">
+        <p class="italic text-gray-300">"Dołączyłem z ciekawości, zostałem na dłużej. ROI robi robotę!"</p>
+        <p class="mt-4 text-green-400 font-semibold">— Michał P.</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl border border-green-600 shadow-md">
+        <p class="italic text-gray-300">"Typy konkretne, support błyskawiczny. Dzięki za pomoc w budowie bankrolla!"</p>
+        <p class="mt-4 text-green-400 font-semibold">— Karolina Z.</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl border border-green-600 shadow-md">
+        <p class="italic text-gray-300">"Z każdym dniem czuję, że gram mądrzej. Polecam każdemu, kto chce podejść profesjonalnie."</p>
+        <p class="mt-4 text-green-400 font-semibold">— Adam K.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-center py-6 mt-10">
+    <p class="text-sm text-gray-500">&copy; 2025 HustleTypes. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+
+</body>
+</html>
