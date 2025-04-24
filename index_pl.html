@@ -18,27 +18,22 @@
     .pulse-animation {
       animation: pulse 1.5s infinite;
     }
-	.navbar a {
-  white-space: nowrap;
-  padding: 0.5rem 0.75rem;
-  display: inline-block;
-}
   </style>
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans overflow-x-hidden">
-<header class="bg-gray-800 shadow-md sticky top-0 z-50 w-full">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-4 md:px-6 py-4 gap-2 md:gap-0">
-    <h1 class="text-2xl font-bold text-green-500">HustleTypes</h1>
-    <nav class="flex flex-wrap justify-center items-center gap-2 md:gap-4 text-white text-sm md:text-base">
-      <a href="#onas" class="whitespace-nowrap px-2 md:px-3 py-1 md:py-2 hover:text-green-400">O nas</a>
-      <a href="#wygrane" class="whitespace-nowrap px-2 md:px-3 py-1 md:py-2 hover:text-green-400">Wygrane</a>
-      <a href="#cennik" class="whitespace-nowrap px-2 md:px-3 py-1 md:py-2 hover:text-green-400">Cennik</a>
-      <a href="#opinie" class="whitespace-nowrap px-2 md:px-3 py-1 md:py-2 hover:text-green-400">Opinie</a>
-      <a href="#kontakt" class="whitespace-nowrap px-2 md:px-3 py-1 md:py-2 hover:text-green-400">Kontakt</a>
-    </nav>
-  </div>
-</header>
 
+  <header class="bg-gray-800 shadow-md sticky top-0 z-50 w-full">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
+      <h1 class="text-2xl font-bold text-green-500">HustleTypes</h1>
+      <nav class="space-x-4 md:space-x-6 flex items-center text-sm md:text-base">
+        <a href="#about" class="hover:text-green-400">O nas</a>
+        <a href="#wins" class="hover:text-green-400">Wygrane</a>
+        <a href="#pricing" class="hover:text-green-400">Cennik</a>
+        <a href="#reviews" class="hover:text-green-400">Opinie</a>
+        <a href="#contact" class="hover:text-green-400">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 
   <section class="bg-gray-950 py-20 text-center animate-fade-in-up px-4">
     <div class="max-w-4xl mx-auto">
@@ -144,6 +139,66 @@
   </div>
 </section>
 
+<script>
+  // Nowa, płynna animacja liczników
+  window.addEventListener('load', () => {
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+      const target = +counter.dataset.target;
+      const duration = 2000;
+      const startTime = performance.now();
+
+      const animate = (time) => {
+        const progress = Math.min((time - startTime) / duration, 1);
+        counter.textContent = Math.floor(progress * target);
+        if (progress < 1) requestAnimationFrame(animate);
+      };
+
+      requestAnimationFrame(animate);
+    });
+  });
+
+  // Swiper - poprawiona konfiguracja
+  const swiper = new Swiper(".wins-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    centeredSlides: true,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
+
+  // Wybór planu cenowego
+  function selectPlan(planId) {
+    const plans = document.querySelectorAll('.plan');
+    plans.forEach(plan => {
+      plan.classList.remove('border-green-500', 'scale-105', 'shadow-green-500/30');
+      plan.querySelector('.buy-btn').classList.remove('bg-green-600');
+      plan.querySelector('.buy-btn').classList.add('bg-green-500');
+    });
+
+    const selected = document.getElementById(planId);
+    selected.classList.add('border-green-500', 'scale-105', 'shadow-green-500/30');
+    selected.querySelector('.buy-btn').classList.remove('bg-green-500');
+    selected.querySelector('.buy-btn').classList.add('bg-green-600');
+
+    console.log("Wybrano plan:", planId);
+  }
+</script>
+
+
+
 <section id="pricing" class="py-20 bg-gray-900 animate-fade-in-up">
   <div class="max-w-6xl mx-auto px-6 text-center">
     <h3 class="text-4xl font-bold text-green-400 mb-6">Cennik Promocyjny!</h3>
@@ -229,63 +284,6 @@
   <footer class="bg-gray-900 text-center py-6 mt-10">
     <p class="text-sm text-gray-500">&copy; 2025 HustleTypes. Wszelkie prawa zastrzeżone.</p>
   </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Animacja liczników
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.dataset.target;
-        const count = +counter.innerText;
-        const speed = 100;
 
-        const increment = target / speed;
-
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
-          setTimeout(updateCount, 30);
-        } else {
-          counter.innerText = target;
-        }
-      };
-      updateCount();
-    });
-
-    // Swiper init
-    const swiper = new Swiper(".wins-swiper", {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      centeredSlides: true,
-      loop: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        }
-      }
-    });
-
-    // Plan selection
-    window.selectPlan = function (planId) {
-      const plans = document.querySelectorAll('.plan');
-      plans.forEach(plan => {
-        plan.classList.remove('border-green-500', 'scale-105', 'shadow-green-500/30');
-        plan.querySelector('.buy-btn').classList.remove('bg-green-600');
-        plan.querySelector('.buy-btn').classList.add('bg-green-500');
-      });
-
-      const selected = document.getElementById(planId);
-      selected.classList.add('border-green-500', 'scale-105', 'shadow-green-500/30');
-      selected.querySelector('.buy-btn').classList.remove('bg-green-500');
-      selected.querySelector('.buy-btn').classList.add('bg-green-600');
-    };
-  });
-</script>
 </body>
 </html>
