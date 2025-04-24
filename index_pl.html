@@ -89,43 +89,43 @@
         <!-- Kupon 1 -->
         <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
           <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
-            <img src="kupon.jpg" alt="Kupon 1" class="object-contain h-full w-auto">
+            <img src="kupon.jpg" alt="Kupon 1" class="object-cover h-full w-full rounded-lg">
           </div>
         </div>
         <!-- Kupon 2 -->
         <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
           <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
-            <img src="kupon1.jpg" alt="Kupon 2" class="object-contain h-full w-auto">
+            <img src="kupon1.jpg" alt="Kupon 2" class="object-cover h-full w-full rounded-lg">
           </div>
         </div>
         <!-- Kupon 3 -->
         <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
           <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
-            <img src="kupon2.jpg" alt="Kupon 3" class="object-contain h-full w-auto">
+            <img src="kupon2.jpg" alt="Kupon 3" class="object-cover h-full w-full rounded-lg">
           </div>
         </div>
         <!-- Kupon 4 -->
         <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
           <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
-            <img src="kupon3.jpg" alt="Kupon 4" class="object-contain h-full w-auto">
+            <img src="kupon3.jpg" alt="Kupon 4" class="object-cover h-full w-full rounded-lg">
           </div>
         </div>
         <!-- Kupon 5 -->
         <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
           <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
-            <img src="kupon7.jpg" alt="Kupon 5" class="object-contain h-full w-auto">
+            <img src="kupon7.jpg" alt="Kupon 5" class="object-cover h-full w-full rounded-lg">
           </div>
         </div>
         <!-- Kupon 6 -->
         <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
           <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
-            <img src="kupon8.jpg" alt="Kupon 6" class="object-contain h-full w-auto">
+            <img src="kupon8.jpg" alt="Kupon 6" class="object-cover h-full w-full rounded-lg">
           </div>
         </div>
         <!-- Kupon 7 -->
         <div class="swiper-slide bg-gray-800 p-4 rounded-xl shadow-green-600/30 shadow-lg flex flex-col items-center">
           <div class="w-full h-72 overflow-hidden flex items-center justify-center rounded-lg mb-4">
-            <img src="kupon9.jpg" alt="Kupon 7" class="object-contain h-full w-auto">
+            <img src="kupon9.jpg" alt="Kupon 7" class="object-cover h-full w-full rounded-lg">
           </div>
         </div>
       </div>
@@ -140,46 +140,63 @@
 </section>
 
 <script>
+  // Nowa, płynna animacja liczników
+  window.addEventListener('load', () => {
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+      const target = +counter.dataset.target;
+      const duration = 2000;
+      const startTime = performance.now();
+
+      const animate = (time) => {
+        const progress = Math.min((time - startTime) / duration, 1);
+        counter.textContent = Math.floor(progress * target);
+        if (progress < 1) requestAnimationFrame(animate);
+      };
+
+      requestAnimationFrame(animate);
+    });
+  });
+
+  // Swiper - poprawiona konfiguracja
   const swiper = new Swiper(".wins-swiper", {
     slidesPerView: 1,
     spaceBetween: 20,
+    centeredSlides: true,
+    loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
     breakpoints: {
       768: {
-        slidesPerView: 2
+        slidesPerView: 2,
       },
       1024: {
-        slidesPerView: 3
+        slidesPerView: 3,
       }
     }
   });
 
-  // Animacja liczb
-  window.addEventListener('load', function () {
-    const counters = document.querySelectorAll('.counter');
-
-    counters.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      let count = 0;
-      const increment = target / 200;
-
-      function animateCounter() {
-        if (count < target) {
-          count += increment;
-          counter.textContent = Math.floor(count);
-          requestAnimationFrame(animateCounter);
-        } else {
-          counter.textContent = target;
-        }
-      }
-      
-      animateCounter();
+  // Wybór planu cenowego
+  function selectPlan(planId) {
+    const plans = document.querySelectorAll('.plan');
+    plans.forEach(plan => {
+      plan.classList.remove('border-green-500', 'scale-105', 'shadow-green-500/30');
+      plan.querySelector('.buy-btn').classList.remove('bg-green-600');
+      plan.querySelector('.buy-btn').classList.add('bg-green-500');
     });
-  });
+
+    const selected = document.getElementById(planId);
+    selected.classList.add('border-green-500', 'scale-105', 'shadow-green-500/30');
+    selected.querySelector('.buy-btn').classList.remove('bg-green-500');
+    selected.querySelector('.buy-btn').classList.add('bg-green-600');
+
+    console.log("Wybrano plan:", planId);
+  }
 </script>
+
 
 
 <section id="pricing" class="py-20 bg-gray-900 animate-fade-in-up">
@@ -246,30 +263,11 @@
   </div>
 </section>
 
-
-<script>
-  function selectPlan(planId) {
-    const plans = document.querySelectorAll('.plan');
-    plans.forEach(plan => {
-      plan.classList.remove('border-green-500', 'scale-105', 'shadow-green-500/30');
-      plan.querySelector('.buy-btn').classList.remove('bg-green-600');
-      plan.querySelector('.buy-btn').classList.add('bg-green-500');
-    });
-
-    const selected = document.getElementById(planId);
-    selected.classList.add('border-green-500', 'scale-105', 'shadow-green-500/30');
-    selected.querySelector('.buy-btn').classList.remove('bg-green-500');
-    selected.querySelector('.buy-btn').classList.add('bg-green-600');
-
-    console.log("Wybrano plan:", planId);
-  }
-</script>
-
   <section id="reviews" class="py-16 bg-gray-950 text-center animate-fade-in-up">
     <h3 class="text-3xl font-semibold text-green-400 mb-10">Co mówią nasi klienci</h3>
     <div class="max-w-6xl mx-auto grid gap-6 md:grid-cols-3 px-6">
       <div class="bg-gray-800 p-6 rounded-xl border border-green-600 shadow-md">
-        <p class="italic text-gray-300">"Skuteczność DUPA w okolicy 90%, bez problemu da sie zarobić."</p>
+        <p class="italic text-gray-300">"Skuteczność w okolicy 90%, bez problemu da sie zarobić."</p>
         <p class="mt-4 text-green-400 font-semibold">— Michał R.</p>
       </div>
       <div class="bg-gray-800 p-6 rounded-xl border border-green-600 shadow-md">
