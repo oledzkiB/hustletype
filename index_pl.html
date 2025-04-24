@@ -18,6 +18,11 @@
     .pulse-animation {
       animation: pulse 1.5s infinite;
     }
+	.navbar a {
+  white-space: nowrap;
+  padding: 0.5rem 0.75rem;
+  display: inline-block;
+}
   </style>
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans overflow-x-hidden">
@@ -25,13 +30,13 @@
   <header class="bg-gray-800 shadow-md sticky top-0 z-50 w-full">
     <div class="max-w-6xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
       <h1 class="text-2xl font-bold text-green-500">HustleTypes</h1>
-      <nav class="space-x-4 md:space-x-6 flex items-center text-sm md:text-base">
-        <a href="#about" class="hover:text-green-400">O nas</a>
-        <a href="#wins" class="hover:text-green-400">Wygrane</a>
-        <a href="#pricing" class="hover:text-green-400">Cennik</a>
-        <a href="#reviews" class="hover:text-green-400">Opinie</a>
-        <a href="#contact" class="hover:text-green-400">Kontakt</a>
-      </nav>
+    <nav class="flex flex-wrap items-center justify-center gap-4 text-white text-sm sm:text-base">
+  <a href="#onas" class="whitespace-nowrap px-3 py-2 hover:text-green-400">O nas</a>
+  <a href="#wygrane" class="whitespace-nowrap px-3 py-2 hover:text-green-400">Wygrane</a>
+  <a href="#cennik" class="whitespace-nowrap px-3 py-2 hover:text-green-400">Cennik</a>
+  <a href="#opinie" class="whitespace-nowrap px-3 py-2 hover:text-green-400">Opinie</a>
+  <a href="#kontakt" class="whitespace-nowrap px-3 py-2 hover:text-green-400">Kontakt</a>
+</nav>
     </div>
   </header>
 
@@ -282,8 +287,5 @@
     };
   });
 </script>
-</body>
-</html>
-
 </body>
 </html>
