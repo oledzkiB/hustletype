@@ -59,7 +59,69 @@
     </div>
   </div>
 </section>
+<section id="pricing" class="py-20 bg-gray-900 animate-fade-in-up">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h3 class="text-4xl font-bold text-green-400 mb-6">Cennik Promocyjny!</h3>
+    <p class="text-gray-300 mb-10">Skorzystaj z aktualnych rabatów i zacznij grać z zyskiem.</p>
+    <div id="plans" class="grid md:grid-cols-3 gap-8 text-gray-100">
 
+      <div onclick="selectPlan('Basic')" id="Basic" class="plan relative bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col items-center cursor-pointer transition border-2 border-transparent hover:border-green-500">
+  <!-- Etykieta -->
+  <div class="absolute top-0 left-0 bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-br-xl">-15%</div>
+
+  <h4 class="text-2xl font-semibold mb-4 text-green-400">Basic</h4>
+  <div class="mb-4">
+    <span class="text-xl text-gray-400 line-through mr-2">70 PLN</span>
+    <span class="text-3xl font-bold text-green-400">59 PLN</span>
+  </div>
+  <ul class="mb-6 space-y-2 text-gray-300">
+    <li>✔️ Dostęp do grupy</li>
+    <li>✔️ Typy ekspertów</li>
+  </ul>
+  <a href="paysafecard.html?plan=Basic" target="_blank" class="buy-btn bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full text-white font-semibold transition">Kup teraz</a>
+</div>
+
+<!-- Pakiet Premium -->
+<div onclick="selectPlan('Premium')" id="Premium" class="plan relative bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col items-center cursor-pointer transition border-2 border-transparent hover:border-green-500">
+  <!-- Etykieta -->
+  <div class="absolute top-0 left-0 bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-br-xl">-25%</div>
+
+  <h4 class="text-2xl font-semibold mb-4 text-green-400">Premium</h4>
+  <div class="mb-4">
+    <span class="text-xl text-gray-400 line-through mr-2">130 PLN</span>
+    <span class="text-3xl font-bold text-green-400">99 PLN</span>
+  </div>
+  <ul class="mb-6 space-y-2 text-gray-300">
+    <li>✔️ Wyższe kursy</li>
+    <li>✔️ Dostęp VIP</li>
+    <li>✔️ Analizy premium</li>
+  </ul>
+  <a href="paysafecard.html?plan=Premium" target="_blank" class="buy-btn bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full text-white font-semibold transition">Kup teraz</a>
+</div>
+
+<!-- Pakiet Pro -->
+<div onclick="selectPlan('Pro')" id="Pro" class="plan relative bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col items-center cursor-pointer transition border-2 border-transparent hover:border-green-500">
+  <!-- Etykieta -->
+  <div class="absolute top-0 left-0 bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-br-xl">-40%</div>
+
+  <h4 class="text-2xl font-semibold mb-4 text-green-400">Pro</h4>
+  <div class="mb-4">
+    <span class="text-xl text-gray-400 line-through mr-2">249 PLN</span>
+    <span class="text-3xl font-bold text-green-400">149 PLN</span>
+  </div>
+  <ul class="mb-6 space-y-2 text-gray-300">
+    <li>✔️ Analizy najbardziej zaawansowanymi metodami</li>
+    <li>✔️ Full VIP & support 24/7</li>
+    <li>✔️ Typy live</li>
+    <li>✔️ Dostęp VIP</li>
+  </ul>
+  <a href="paysafecard.html?plan=Pro" target="_blank" class="buy-btn bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full text-white font-semibold transition">Kup teraz</a>
+</div>
+
+    </div>
+	<p class="text-gray-300 mb-10">*cena dotyczy miesięcznego dostępu</p>
+  </div>
+</section>
 <section id="wins" class="py-20 bg-gray-950 animate-fade-in-up">
   <div class="max-w-6xl mx-auto px-6 text-center">
     <h3 class="text-4xl font-bold text-green-400 mb-4">Nasze sukcesy</h3>
@@ -134,7 +196,7 @@
       <div class="swiper-button-prev"></div>
     </div>
 
-    <a href="#pricing" class="inline-block mt-12 bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-full transition pulse-animation text-lg">Dołącz do naszej grupy</a>
+    <a href="https://t.me/+u-wYhoolDxEwODI0" target="_blank" class="inline-block mt-12 bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-full transition pulse-animation text-lg">Dołącz do naszej grupy</a>
   </div>
 </section>
 
@@ -195,72 +257,6 @@
     console.log("Wybrano plan:", planId);
   }
 </script>
-
-
-
-<section id="pricing" class="py-20 bg-gray-900 animate-fade-in-up">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h3 class="text-4xl font-bold text-green-400 mb-6">Cennik Promocyjny!</h3>
-    <p class="text-gray-300 mb-10">Skorzystaj z aktualnych rabatów i zacznij grać z zyskiem.</p>
-    <div id="plans" class="grid md:grid-cols-3 gap-8 text-gray-100">
-
-      <div onclick="selectPlan('Basic')" id="Basic" class="plan relative bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col items-center cursor-pointer transition border-2 border-transparent hover:border-green-500">
-  <!-- Etykieta -->
-  <div class="absolute top-0 left-0 bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-br-xl">-15%</div>
-
-  <h4 class="text-2xl font-semibold mb-4 text-green-400">Basic</h4>
-  <div class="mb-4">
-    <span class="text-xl text-gray-400 line-through mr-2">70 PLN</span>
-    <span class="text-3xl font-bold text-green-400">59 PLN</span>
-  </div>
-  <ul class="mb-6 space-y-2 text-gray-300">
-    <li>✔️ Dostęp do grupy</li>
-    <li>✔️ Typy ekspertów</li>
-  </ul>
-  <button class="buy-btn bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full text-white font-semibold transition">Kup teraz</button>
-</div>
-
-<!-- Pakiet Premium -->
-<div onclick="selectPlan('Premium')" id="Premium" class="plan relative bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col items-center cursor-pointer transition border-2 border-transparent hover:border-green-500">
-  <!-- Etykieta -->
-  <div class="absolute top-0 left-0 bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-br-xl">-25%</div>
-
-  <h4 class="text-2xl font-semibold mb-4 text-green-400">Premium</h4>
-  <div class="mb-4">
-    <span class="text-xl text-gray-400 line-through mr-2">130 PLN</span>
-    <span class="text-3xl font-bold text-green-400">99 PLN</span>
-  </div>
-  <ul class="mb-6 space-y-2 text-gray-300">
-    <li>✔️ Wyższe kursy</li>
-    <li>✔️ Dostęp VIP</li>
-    <li>✔️ Analizy premium</li>
-  </ul>
-  <button class="buy-btn bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full text-white font-semibold transition">Kup teraz</button>
-</div>
-
-<!-- Pakiet Pro -->
-<div onclick="selectPlan('Pro')" id="Pro" class="plan relative bg-gray-800 p-8 rounded-xl shadow-lg flex flex-col items-center cursor-pointer transition border-2 border-transparent hover:border-green-500">
-  <!-- Etykieta -->
-  <div class="absolute top-0 left-0 bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-br-xl">-40%</div>
-
-  <h4 class="text-2xl font-semibold mb-4 text-green-400">Pro</h4>
-  <div class="mb-4">
-    <span class="text-xl text-gray-400 line-through mr-2">249 PLN</span>
-    <span class="text-3xl font-bold text-green-400">149 PLN</span>
-  </div>
-  <ul class="mb-6 space-y-2 text-gray-300">
-    <li>✔️ Analizy najbardziej zaawansowanymi metodami</li>
-    <li>✔️ Full VIP & support 24/7</li>
-    <li>✔️ Typy live</li>
-    <li>✔️ Dostęp VIP</li>
-  </ul>
-  <button class="buy-btn bg-green-500 hover:bg-green-600 px-6 py-3 rounded-full text-white font-semibold transition">Kup teraz</button>
-</div>
-
-    </div>
-	<p class="text-gray-300 mb-10">*cena dotyczy miesięcznego dostępu</p>
-  </div>
-</section>
 
   <section id="reviews" class="py-16 bg-gray-950 text-center animate-fade-in-up">
     <h3 class="text-3xl font-semibold text-green-400 mb-10">Co mówią nasi klienci</h3>
